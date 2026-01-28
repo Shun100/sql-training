@@ -21,15 +21,15 @@ SELECT * FROM users;
 -- テーブルの削除（データ戻せないので注意）
 -- DROP TABLE Product;
 
-CREATE TABLE Product (
-  -- product_id CHAR(4) NOT NULL,
-  product_id INTEGER GENERATED ALWAYS AS IDENTITY, -- auto number
-  product_name VARCHAR(32) NOT NULL,
-  product_category VARCHAR(12) NOT NULL,
-  created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (product_id)
-);
+-- CREATE TABLE Product (
+--   -- product_id CHAR(4) NOT NULL,
+--   product_id INTEGER GENERATED ALWAYS AS IDENTITY, -- auto number
+--   product_name VARCHAR(32) NOT NULL,
+--   product_category VARCHAR(12) NOT NULL,
+--   created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+--   updated_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP,
+--   PRIMARY KEY (product_id)
+-- );
 
 INSERT INTO Product (product_name, product_category) VALUES
   ('ゼロから作るDeep Learning', 'book');
