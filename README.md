@@ -21,3 +21,7 @@
 ## トラブルシューティング
   - ターミナルの文字コード変更
     - `chcp 65001`
+  - PostgreSQLを再起動
+    - PowerShellを管理者権限で起動
+    - `net stop postgresql-x64-16`
+    - `net start postgresql-x64-16`

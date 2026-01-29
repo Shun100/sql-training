@@ -1,0 +1,20 @@
+SET client_encoding = 'UTF8';
+SHOW client_encoding;
+
+CREATE TABLE Item (
+  id INTEGER GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(12) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO Item (name) VALUES
+  ('item01');
+
+ALTER TABLE Item ADD COLUMN created_at TIMESTAMP(0) DEFAULT CURRENT_TIMESTAMP;
+
+INSERT INTO Item (name) VALUES
+  ('item02');
+
+SELECT * FROM Item;
+
+DROP TABLE Item;
