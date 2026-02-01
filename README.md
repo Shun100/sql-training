@@ -1,5 +1,9 @@
 # SQL勉強用
 
+## 基本
+- SQLの論理的な実行順
+  - `FROM` -> `WHERE` -> `GROUP BY` -> `HAVING` -> `SELECT` -> `ORDER BY`
+
 ## 実行方法
 - `C:\ForDevelop\PostgreSQL\bin\psql.exe -U postgres -f hoge.sql`
 
