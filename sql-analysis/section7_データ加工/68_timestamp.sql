@@ -1,0 +1,18 @@
+-- TIMESTAMP型: タイムゾーンの情報を持つ
+-- DATETIME型: タイムゾーンの情報を持たない
+
+SET client_encoding = 'UTF8';
+
+DROP TABLE IF EXISTS users CASCADE;
+
+CREATE TABLE users (
+  id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  name CHAR(4) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP(0)
+);
+
+INSERT INTO users (name, created_at) VALUES
+  ('ユーザ1', CURRENT_TIMESTAMP),
+  ('ユーザ2', CURRENT_TIMESTAMP(0));
+
+SELECT * FROM users;
