@@ -12,12 +12,13 @@ DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE users (
   id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   name CHAR(4) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP(0)
+  created_at TIMESTAMPTZ DEFAULT now()
 );
 
 INSERT INTO users (name, created_at) VALUES
-  ('ユーザ1', CURRENT_TIMESTAMP),
-  ('ユーザ2', CURRENT_TIMESTAMP(0)),
-  ('ユーザ3', CURRENT_TIMESTAMP(1));
+  ('ユーザ1', now()),                           -- セッションのタイムゾーン
+  ('ユーザ2', now() AT TIME ZONE '+09'),        -- UTC+9
+  ('ユーザ3', now() AT TIME ZONE 'UTC'),        -- UTC
+  ('ユーザ4', now() AT TIME ZONE 'Asia/Tokyo'); -- 東京タイムゾーン
 
 SELECT * FROM users;
